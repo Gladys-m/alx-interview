@@ -7,6 +7,7 @@ import sys
 
 
 def is_safe(board, row, col, N):
+    """Check if placing a queen at position (row, col) is safe"""
     for i in range(col):
         if board[row][i] == 1:
             return False
@@ -23,6 +24,7 @@ def is_safe(board, row, col, N):
 
 
 def solve_nqueens(board, col, N):
+    """Recursive function to solve the N queens problem"""
     if col >= N:
         print_solution(board, N)
         return True
@@ -38,6 +40,7 @@ def solve_nqueens(board, col, N):
 
 
 def print_solution(board, N):
+    """Print the current state of the board"""
     for i in range(N):
         for j in range(N):
             print(board[i][j], end=' ')
@@ -45,6 +48,7 @@ def print_solution(board, N):
 
 
 def main():
+    """Main function"""
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
